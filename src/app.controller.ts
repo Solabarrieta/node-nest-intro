@@ -9,4 +9,13 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('learn')
+  newEndpoint() {
+    return 'Aprendiendo Nest.js';
+  }
+  @Get('/ruta/')
+  ruta() {
+    return 'Aprendiendo Nest.js con slashes';
+  }
 }
