@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { CreateUserDto, UpdateUserDto } from 'src/dtos/users.dtos';
 import { User } from 'src/entities/user.entity';
 
 @Injectable()
@@ -9,12 +10,12 @@ export class UsersService {
     return id;
   }
 
-  create(payload: any) {
+  create(payload: CreateUserDto) {
     return payload;
   }
 
-  update(id: User['id']) {
-    return id;
+  update(id: User['id'], payload: UpdateUserDto) {
+    return { id, payload };
   }
 
   delete(id: User['id']) {
