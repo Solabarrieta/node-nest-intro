@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { CreateBrandDto, UpdateBrandtDto } from 'src/dtos/brands.dtos';
 import { Brand } from 'src/entities/brand.entity';
 
 @Injectable()
@@ -9,12 +10,15 @@ export class BrandsService {
     return id;
   }
 
-  create(payload: any) {
+  create(payload: CreateBrandDto) {
     return payload;
   }
 
-  update(id: Brand['id']) {
-    return id;
+  update(id: Brand['id'], payload: UpdateBrandtDto) {
+    return {
+      id,
+      payload,
+    };
   }
 
   delete(id: Brand['id']) {
